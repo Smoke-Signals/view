@@ -11,8 +11,11 @@
             <ion-title size="large">VIEW</ion-title>
           </ion-toolbar>
         </ion-header>
-        <ion-paragraph>Pleur hier je component in om je component te testen, als helemaal klaar ben verwijder je dit weer</ion-paragraph>
-        <!-- <ExploreContainer name="Tab 1 page" /> -->
+       <alert-component />
       </ion-content>
     </ion-page>
   </template>
+
+  <script setup>
+import AlertComponent from "@/components/AlertComponent.vue"
+</script>
