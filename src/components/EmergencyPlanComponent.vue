@@ -30,7 +30,7 @@ import { defineComponent } from 'vue';
   border-radius: 25px;
   background-color: #000033;
   margin: 2em;
-  padding: 2px;
+  padding: 4px;
 }
 
 .steps {
@@ -51,6 +51,7 @@ import { defineComponent } from 'vue';
         justify-content: center;
         align-items: center;
         margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     ion-button {
