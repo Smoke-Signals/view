@@ -62,6 +62,9 @@ import { defineComponent } from 'vue';
     --border-style: solid;
     --border-width: 1px;
 
+    --background-activated: #bf2828;
+    --text-activivated: black;
+
     --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
 
     --padding-top: 10px;
