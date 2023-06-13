@@ -67,7 +67,7 @@ export default {
 
   .top-section {
     flex: 0 0 70%; /* 70% van de flexcontainerhoogte */
-    background-color: red; /* Vervang dit met de gewenste achtergrondkleur */
+    background-color: #FAFAFA; /* Vervang dit met de gewenste achtergrondkleur */
   }
 
   .bottom-section {
