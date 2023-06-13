@@ -9,24 +9,27 @@
 
 
 </template>
-  
+
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 export default {
   setup() {
-    const buildingImage = ref('/assets/Gebouw - omhoog.svg');
+    const currentBuilding = ref(1);  // Keep track of the current building image
 
     const changeBuilding = () => {
-      // Code to change the building image goes here.
-      // For now, it doesn't do anything.
+      currentBuilding.value = currentBuilding.value === 1 ? 2 : 1;
     };
+
+    const buildingImage = computed(() => {
+      return currentBuilding.value === 1 ? '/assets/Gebouw - omhoog.svg' : '/assets/Gebouw - omlaag.svg';
+    });
 
     return {
       buildingImage,
-      changeBuilding
-    }
-  }
+      changeBuilding,
+    };
+  },
 };
 </script>
 
