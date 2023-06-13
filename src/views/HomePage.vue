@@ -6,7 +6,11 @@
           <ion-buttons slot="start">
             <!-- Eventuele knoppen aan het begin van de navigatiebalk -->
           </ion-buttons>
-          <ion-title>View</ion-title>
+          <ion-title class="logo-div">
+            <div class="view-logo">
+          <img src="/assets/View_Logo.svg">
+        </div>
+         </ion-title>
           <ion-buttons slot="end">
             <ion-button router-link="/settings-page" router-direction="forward">
               <ion-icon slot="icon-only" :ios="settingsIcon" :md="settingsIcon"></ion-icon>
@@ -33,7 +37,7 @@
 
 <script lang="ts">
 import { IonTitle, IonPage, IonButton, IonButtons, IonToolbar, IonHeader, IonIcon, IonContent } from '@ionic/vue';
-import { settings } from 'ionicons/icons';
+import { settingsOutline } from 'ionicons/icons';
 import BuildingComponent from "@/components/BuildingComponent.vue"
 import EmergencyPlanComponent from "@/components/EmergencyPlanComponent.vue"
 
@@ -52,13 +56,25 @@ export default {
   },
   computed: {
     settingsIcon() {
-      return settings;
+      return settingsOutline;
     },
   }
 };
 </script>
 
 <style>
+  .logo-div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .view-logo {
+    width: 105.53px;
+    height: 26px;
+    margin-left: 117px;
+  }
+
   .flex-container {
     display: flex;
     flex-direction: column;
