@@ -1,13 +1,9 @@
 <template>
-	<!-- <h1>BuildingComponent</h1> -->
-
   <div class="building-card">
 	<div class="building">
         <img :src="buildingImage" @click="changeBuilding" />
     </div>
     </div>
-
-
 </template>
 
 <script lang="ts">
@@ -45,11 +41,10 @@ export default {
     display: flex;
     justify-content: center;
     height: 100%;
-    padding-top: 30px; /* 43 px padding per design */  
+    padding-top: 30px; /* 30 px padding per design */  
   }
   .building img {
     width: 248px;
-    height: 342px
-;
+    height: 342px;
   }
 </style>
