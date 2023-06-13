@@ -72,6 +72,6 @@ export default {
 
   .bottom-section {
     flex: 0 0 30%; /* 30% van de flexcontainerhoogte */
-    background-color: blue; /* Vervang dit met de gewenste achtergrondkleur */
+    background-color: #fafafa; /* Vervang dit met de gewenste achtergrondkleur */
   }
 </style>
