@@ -1,9 +1,12 @@
 <template>
 	<!-- <h1>BuildingComponent</h1> -->
 
+  <div class="building-card">
 	<div class="building">
         <img :src="buildingImage" @click="changeBuilding" />
     </div>
+    </div>
+
 
 </template>
   
@@ -12,7 +15,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const buildingImage = ref('/assets/building.svg');
+    const buildingImage = ref('/assets/Gebouw - omhoog.svg');
 
     const changeBuilding = () => {
       // Code to change the building image goes here.
@@ -28,14 +31,22 @@ export default {
 </script>
 
 <style scoped>
+.building-card {
+  background: white;
+  width: 341px;
+  height: 402px;
+  margin: 24px; 
+  border-radius: 25px;
+}
   .building {
     display: flex;
     justify-content: center;
     height: 100%;
-    padding-top: 2.6875rem; /* 43 px padding per design */
+    padding-top: 30px; /* 43 px padding per design */  
   }
   .building img {
-    width: 165px;
-    height: 357px;
+    width: 248px;
+    height: 342px
+;
   }
 </style>
