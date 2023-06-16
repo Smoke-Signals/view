@@ -11,10 +11,24 @@
     <ion-content class="ion-padding">
       <h1>Welcome to the Setting Page</h1>
       <p>This is the content of the Settings Page.</p>
+      <NotificationButtonComponent></NotificationButtonComponent>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup>
+<script lang="ts">
   import { IonHeader, IonPage, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
+  import NotificationButtonComponent from "@/components/NotificationButtonComponent.vue"
+  export default {
+  components: {
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    IonContent,
+    IonButtons,
+    IonBackButton,
+    NotificationButtonComponent
+  },
+};
 </script>
