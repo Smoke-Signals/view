@@ -1,83 +1,73 @@
 <template>
-	<h1>EmergencyPlanComponent</h1>
-	<!-- De code hier onder is niet meer geschikt volgens het design -->
-
-	<!-- <h1 class="text" style="padding-top: 20px;">Fire : 5th floor</h1>
-	<div class="flex" id="home-container">
-			<ion-icon :icon="flameIcon" style="font-size: 3rem;" class="red"></ion-icon>
-			<ion-icon :icon="homeIcon" style="font-size: 3rem;"></ion-icon>
-	</div>
-	<ion-content>
-		<h1 class="text">Go down</h1>
-		<div class="flex">
-			<ion-icon :icon="arrowDownIcon" style="font-size: 3rem;"></ion-icon>
-		</div>
-	</ion-content> -->
+	<div id="container">
+    <h1 class="text">Wat moet je doen?</h1>
+      <ion-img class="steps" src="/assets/stappen.svg"></ion-img>
+    <div class="flex">
+      <ion-button shape="round" fill="outline" expand="full">
+        Ik heb hulp nodig
+        <ion-icon slot="end" :icon="arrowForward" :md="arrowForward"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
 </template>
   
 <script lang="ts">
-import { IonIcon, IonContent } from '@ionic/vue';
-import { home, arrowDown, flame, settings } from 'ionicons/icons';
+import { arrowForward } from 'ionicons/icons';
+// import { stappen } from '/assets/stappen.svg';
+// import { fireLogo } from 'assets/fireLogo';
+import { defineComponent } from 'vue';
 
-export default {
-  components: {
-    // IonIcon,
-    // IonContent,
-  },
-  computed: {
-    homeIcon() {
-      return home;
-    },
-    arrowDownIcon() {
-      return arrowDown;
-    },
-    flameIcon() {
-      return flame;
+  export default defineComponent ({
+    setup() {
+      return {arrowForward}
     }
-  }
-};
+  });
 </script>
+
 <style scoped>
+
+#container {
+  border-radius: 25px;
+  background-color: #000033;
+  margin: 2em;
+  padding: 4px;
+}
+
+.steps {
+  margin: 30px;
+}
     .text {
         text-align: center;
         color: white;
     }
 
-    ion-title {
-        color:white;
-    }
-
-    #line {
-        background-color: white
-    }
-
     ion-icon {
         color:white;
-        margin-left: 6px;
-        margin-right: 6px;
-    }
-
-    .red {
-        color: red;
-    }
-
-    ion-title {
-        font-weight: bold;
-        font-size: 1.5em;
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        margin-left: 60px;
     }
     .flex {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
-    #home-container {
-        padding-bottom: 80px;
-    }
+    ion-button {
+    --color: #BF2828;
+
+    --border-radius: 25px;
+    --border-color: white;
+    --border-style: solid;
+    --border-width: 1px;
+
+    --background-activated: #bf2828;
+    --text-activivated: black;
+
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
 </style>
