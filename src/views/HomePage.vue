@@ -3,13 +3,15 @@
     <ion-content :fullscreen="true">
       <ion-header>
         <ion-toolbar>
-          <ion-buttons slot="start">
-            <!-- Eventuele knoppen aan het begin van de navigatiebalk -->
-          </ion-buttons>
-          <ion-title>View</ion-title>
+          <ion-buttons slot="start"></ion-buttons>
+          <ion-title class="ion-text-center">
+            <div class="logo-container">
+              <ion-img class="view-logo" src="assets/logo.svg"></ion-img>
+            </div>
+          </ion-title>
           <ion-buttons slot="end">
             <ion-button router-link="/settings-page" router-direction="forward">
-              <ion-icon slot="icon-only" :ios="settingsIcon" :md="settingsIcon"></ion-icon>
+              <ion-icon slot="icon-only" :ios="settingsIcon" :md="settingsIcon" id="settingsIcon"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-toolbar>
@@ -18,11 +20,11 @@
         <!-- Hier de components -->
         <div class="flex-container">
           <div class="top-section">
-            <!-- De building moet circa 70% van het scherm hebben -->
+            <!-- De building moet circa 35% van het scherm hebben -->
             <BuildingComponent />
           </div>
           <div class="bottom-section">
-            <!-- De stappenplan moet circa 30% van het scherm hebben (onderaan) -->
+            <!-- De stappenplan neemt de resterende ruimte in beslag -->
             <EmergencyPlanComponent />
           </div>
         </div>
@@ -32,13 +34,14 @@
 </template>
 
 <script lang="ts">
-import { IonTitle, IonPage, IonButton, IonButtons, IonToolbar, IonHeader, IonIcon, IonContent } from '@ionic/vue';
-import { settings } from 'ionicons/icons';
+import { IonImg, IonTitle, IonPage, IonButton, IonButtons, IonToolbar, IonHeader, IonIcon, IonContent } from '@ionic/vue';
+import { settingsOutline } from 'ionicons/icons';
 import BuildingComponent from "@/components/BuildingComponent.vue"
 import EmergencyPlanComponent from "@/components/EmergencyPlanComponent.vue"
 
 export default {
   components: {
+    IonImg,
     IonPage,
     IonTitle,
     IonButton,
@@ -52,26 +55,41 @@ export default {
   },
   computed: {
     settingsIcon() {
-      return settings;
+      return settingsOutline;
     },
   }
 };
 </script>
 
 <style>
+  #settingsIcon{
+    color: black;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* .view-logo {
+    width: 105.53px;
+    height: 26px;
+  } */
+
   .flex-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Volledige hoogte van het scherm */
+    height: 100vh;
   }
 
   .top-section {
-    flex: 0 0 55%; /* 70% van de flexcontainerhoogte */
-    background-color: red; /* Vervang dit met de gewenste achtergrondkleur */
+    flex: 0 0 20%;
+    background-color: #FAFAFA;
   }
 
   .bottom-section {
-    flex: 0 0 45%; /* 30% van de flexcontainerhoogte */
-    background-color: #fafafa; /* Vervang dit met de gewenste achtergrondkleur */
+    flex: 1;
+    background-color: #FAFAFA;
   }
 </style>
