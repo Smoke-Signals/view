@@ -1,13 +1,17 @@
 <template>
 	<div id="container">
-    <h1 class="text">Wat moet je doen?</h1>
+    <div id="content">
+      <h1 class="text">Wat moet je doen?</h1>
       <ion-img class="steps" src="/assets/stappen.svg"></ion-img>
-    <div class="flex">
-      <ion-button shape="round" fill="outline" expand="full">
-        Ik heb hulp nodig
-        <ion-icon slot="end" :icon="arrowForward" :md="arrowForward"></ion-icon>
-      </ion-button>
+      <div class="flex">
+        <ion-button shape="round" fill="outline" expand="full" class="white-button">
+  Ik heb hulp nodig
+  <ion-icon slot="end" :icon="arrowForward" :md="arrowForward"></ion-icon>
+</ion-button>
+
+      </div>
     </div>
+
   </div>
 </template>
   
@@ -29,8 +33,13 @@ import { defineComponent } from 'vue';
 #container {
   border-radius: 25px;
   background-color: #000033;
-  margin: 2em;
-  padding: 4px;
+  margin-left: 2em;
+  margin-right: 2em;
+
+}
+.white-button {
+  --ion-color-base: white;
+  color: white;
 }
 
 .steps {
@@ -52,6 +61,10 @@ import { defineComponent } from 'vue';
         align-items: center;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    #content {
+      padding: 5px;
     }
 
     ion-button {
