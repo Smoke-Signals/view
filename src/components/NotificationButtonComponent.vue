@@ -25,11 +25,11 @@ export default defineComponent ({
   },
   data() {
     return {
-      selectedOption: 'Trap naar beneden' as string,
+      selectedOption: 'Trap naar boven' as string,
       messageOptions: [
+        { value: 'Trap naar boven', title: 'Brand op de 2e verdieping', content: 'Blijf kalm, ga met de trap naar de bovenste verdieping en wacht op de hulpverleners.' },
         { value: 'Trap naar beneden', title: 'Brand op de 5e verdieping', content: 'Blijf kalm, ga met de trap naar beneden en wacht buiten op instructies van de brandweer.' },
-        { value: 'Blijf waar je bent', title: 'Brand op de 2e verdieping', content: 'Blijf kalm, ga met de trap naar de bovenste verdieping en wacht op de hulpverleners.' },
-        { value: 'Brand zelfde etage', title: 'Brand op uw etage', content: 'Blijf kalm, blijf in uw appartament. De brandweer is onderweg om u veilig uit het appartement te halen.' }
+        { value: 'Brand zelfde etage', title: 'Brand op uw etage', content: 'Blijf kalm, blijf in uw appartament. De brandweer is onderweg om u veilig uit het appartement te halen.' },
       ] as Option[]
     };
   },
